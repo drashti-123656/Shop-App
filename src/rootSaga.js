@@ -1,7 +1,8 @@
-import fetchallProducts from './redux/sagas/productSaga';
+import {fetchallCategories, fetchallProducts} from './redux/sagas/productSaga';
 import {ActionTypes} from './redux/constants/productConstants';
 import {takeLatest} from 'redux-saga/effects';
 
 export default function* rootSaga() {
   yield takeLatest(ActionTypes.FETCH_PRODUCTS, fetchallProducts);
+  yield takeLatest(ActionTypes.FETCH_CATEGORIES, fetchallCategories);
 }
